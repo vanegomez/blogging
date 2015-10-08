@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     collection do
       get :drafts
     end
+    resources :comments
   end
 end

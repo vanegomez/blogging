@@ -1,5 +1,22 @@
 <div class="row">
   <h3><%= @post.title %></h3>
-  <h5><em><%= @post.author %></em></h5>
+  <p>by: <em><strong><%= @post.author.capitalize %></strong></em></p>
   <p><%= @post.body %></p>
+</div>
+
+<%#= render partial: 'comments/new_comment_form' %>
+<hr>
+
+<div class="row">
+  <h4>Comments</h4>
+  <% @comments.each do |comment| %>
+    <div class="small-2 columns">
+      <p><%= comment.author.capitalize %></p>
+    </div>
+
+    <div class="small-10 columns">
+      <p><%= comment.body %></p>
+    </div>
+    <hr>
+  <% end %>
 </div>

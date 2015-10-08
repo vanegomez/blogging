@@ -1,0 +1,13 @@
+<div class="row">
+  <h3>New Comment</h3>
+
+  <%= form_for(@comment) do |f| %>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
