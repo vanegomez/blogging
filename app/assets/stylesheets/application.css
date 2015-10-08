@@ -27,3 +27,7 @@
     top: 0.5rem; }
   .has-form .button {
     height: 1.85rem; } }
+
+.submit {
+  padding-top: 1.5rem;
+}

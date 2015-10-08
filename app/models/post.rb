@@ -14,4 +14,8 @@ class Post < ActiveRecord::Base
   def self.published_posts
     where(status: 1)
   end
+
+  def published?
+    status == "published"
+  end
 end

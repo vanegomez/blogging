@@ -4,19 +4,16 @@
   <p><%= @post.body %></p>
 </div>
 
-<%#= render partial: 'comments/new_comment_form' %>
-<hr>
 
-<div class="row">
-  <h4>Comments</h4>
-  <% @comments.each do |comment| %>
-    <div class="small-2 columns">
-      <p><%= comment.author.capitalize %></p>
-    </div>
+<% if @post.published? %>
+  <hr>
 
-    <div class="small-10 columns">
-      <p><%= comment.body %></p>
-    </div>
-    <hr>
-  <% end %>
-</div>
+  <%= render partial: 'comments/new_comment_form' %>
+
+  <%= render partial: 'comments/comments' %>
+
+<% else %>
+  <div class="row">
+  <%= link_to "Publish", post_path(@post), method: :put %>
+  </div>
+<% end %>

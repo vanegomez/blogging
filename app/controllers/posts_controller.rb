@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def show
     @post = set_post
     @comment = Comment.new
-    @comments = Comment.all
+    @comment.post_id = @post.id
   end
 
   def new
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to root_path
+      redirect_to drafts_posts_path
     else
       flash.now[:errors] = @post.errors.full_messages.join(", ")
       render :new
