@@ -1,0 +1,16 @@
+<div class="row">
+  <h3>New Blog Post</h3>
+
+  <%= form_for(@post) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -4,4 +4,12 @@ class Post < ActiveRecord::Base
   validates :author, presence: true
 
   enum status: %w(draft published)
+
+  def self.draft_posts
+    where(status: 0)
+  end
+
+  def self.published_posts
+    where(status: 1)
+  end
 end
