@@ -8,10 +8,6 @@ class CommentsController < ApplicationController
     redirect_to post_path(@comment.post)
   end
 
-  def destroy
-    set_comment.destroy!
-  end
-
   private
 
   def comment_params

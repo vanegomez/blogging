@@ -36,10 +36,6 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-  def destroy
-    set_post.destroy!
-  end
-
   private
 
   def set_post
