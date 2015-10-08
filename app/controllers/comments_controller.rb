@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
 
     @comment.save
 
+    # render partial: "comments/comments"
     redirect_to post_path(@comment.post)
   end
 
@@ -12,9 +13,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:author, :body)
-  end
-
-  def set_comment
-    Post.find(params[:id])
   end
 end

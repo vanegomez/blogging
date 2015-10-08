@@ -1,18 +1,20 @@
-<div class="row">
-  <h4>Make a Comment</h4>
+<div class="new_comment">
+  <div class="row">
+    <h4>Make a Comment</h4>
 
-  <%= form_for [ @post, @comment ] do |f| %>
-    <div class="small-5 columns">
-      <%= f.label :author %>
-      <%= f.text_field :author %>
-    </div>
-    <div class="small-5 columns">
-      <%= f.label :body %>
-      <%= f.text_area :body %>
-    </div>
-    <div class="small-2 columns submit">
-      <%= f.submit %>
-    </div>
-  <% end %>
+    <%= form_for [ @post, @comment ] do |f| %>
+      <div class="small-5 columns">
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+      </div>
+      <div class="small-5 columns">
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+      </div>
+      <div class="small-2 columns submit">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+  <hr>
 </div>
-<hr>
