@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $("#new_comment").submit(createComment);
+  //$("#new_comment").submit(createComment);
 });
