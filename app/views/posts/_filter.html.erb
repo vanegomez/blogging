@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="small-6 columns" id="filter1">
+  <div class="small-6 columns">
     <%= select :post, :filter_title, @title, { prompt: "Filter by Title" } %>
   </div>
-  <div class="small-6 columns" id="filter2">
+  <div class="small-6 columns">
     <%= select :post, :filter_author, @authors, { prompt: "Filter by Author" } %>
   </div>
 </div>

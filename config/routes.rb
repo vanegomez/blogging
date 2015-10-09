@@ -5,6 +5,6 @@ Rails.application.routes.draw do
       get :drafts
     end
 
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
 end

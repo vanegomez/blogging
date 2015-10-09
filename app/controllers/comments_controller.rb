@@ -1,12 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(comment_params)
-    @comment.post_id = params[:post_id]
+    post = Post.find(params[:post_id])
+    @comment = post.comments.new(comment_params)
+    @comment.post_id = post.id
 
     @comment.save
 
-    # render partial: "comments/comments"
-    redirect_to post_path(@comment.post)
+    render partial: "comments/comment", locals: { post: post, comment: @comment }
+    # redirect_to post_path(@comment.post)
   end
 
   private

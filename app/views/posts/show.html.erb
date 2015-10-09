@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" data-id="<%= @post.id %>">
   <h3><%= @post.title %></h3>
   <p>by: <em><strong><%= @post.author.capitalize %></strong></em></p>
   <p><%= markdown(@post.body) %></p>
@@ -10,7 +10,14 @@
 
   <%= render partial: 'comments/new_comment_form' %>
 
-  <%= render partial: 'comments/comments' %>
+  <div class="comments">
+    <div class="row">
+      <h4>Comments</h4>
+      <% @post.comments.each do |comment| %>
+        <%= render partial: 'comments/comment', locals: { post: @post, comment: comment } %>
+      <% end %>
+    </div>
+  </div>
 
 <% else %>
   <div class="row">
