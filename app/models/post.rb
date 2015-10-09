@@ -18,4 +18,14 @@ class Post < ActiveRecord::Base
   def published?
     status == "published"
   end
+
+  def self.by_title
+    pluck(:title).sort
+  end
+
+  def self.by_author
+    pluck(:author).sort.uniq.sort.map do |author|
+      author.capitalize
+    end
+  end
 end

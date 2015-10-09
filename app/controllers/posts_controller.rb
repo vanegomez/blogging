@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all.published_posts
+    @title = @posts.by_title
+    @authors = @posts.by_author
   end
 
   def drafts
